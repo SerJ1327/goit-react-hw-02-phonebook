@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.Container` 
-    height: 100vh,
-       display: flex,
-        justifyContent: center,
-        alignItems: center,
-        fontSize: 40,
-        color: #010101
-    `;
+export const StyledApp = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: #010101;
+`;

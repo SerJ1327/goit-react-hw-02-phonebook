@@ -1,5 +1,11 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import { StyledSubmitButton } from './FormPhoneBook.styled';
+import {
+  StyledFormPhonebook,
+  StyledInput,
+  StyledInputThumb,
+} from 'components/GlobalStyled/Global.styled';
 export class FormPhonebook extends Component {
   state = {
     name: '',
@@ -32,10 +38,10 @@ export class FormPhonebook extends Component {
 
   render() {
     return (
-      <>
-        <form onSubmit={this.handleSubmit}>
+      <StyledFormPhonebook onSubmit={this.handleSubmit}>
+        <StyledInputThumb>
           <label htmlFor="handleName">Name</label>
-          <input
+          <StyledInput
             type="text"
             name="name"
             id="handleName"
@@ -45,8 +51,10 @@ export class FormPhonebook extends Component {
             value={this.state.name}
             required
           />
+        </StyledInputThumb>
+        <StyledInputThumb>
           <label htmlFor="handleNumber">Number</label>
-          <input
+          <StyledInput
             type="tel"
             name="number"
             id="handleNumber"
@@ -56,9 +64,10 @@ export class FormPhonebook extends Component {
             value={this.state.number}
             required
           />
-          <button type="submit">Add contact</button>
-        </form>
-      </>
+        </StyledInputThumb>
+
+        <StyledSubmitButton type="submit">Add contact</StyledSubmitButton>
+      </StyledFormPhonebook>
     );
   }
 }

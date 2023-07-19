@@ -1,13 +1,15 @@
+import { StyledButton, StyledContactsItems } from './ContactList.styled';
+
 export const ContactList = ({ filter, deleteContact }) => {
   return (
     <div>
       {filter.map(contact => (
-        <li key={contact.id}>
+        <StyledContactsItems key={contact.id}>
           {contact.name}: {contact.number}
-          <button onClick={e => deleteContact(contact.id)} type="button">
+          <StyledButton onClick={e => deleteContact(contact.id)} type="button">
             Delete
-          </button>
-        </li>
+          </StyledButton>
+        </StyledContactsItems>
       ))}
     </div>
   );

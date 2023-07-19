@@ -1,10 +1,11 @@
 import { Component } from 'react';
-import { Section } from './Section/Section';
+import { SectionPhonebook, SectionContacts } from './Section/Sections';
 
 import { FormPhonebook } from './FormPhonebook/FormPhonebook';
 
 import { ContactList } from './ContactList/ContactList';
 import { FilterContacs } from './FilterContacs/FilterContacs';
+import { StyledApp } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -43,22 +44,22 @@ export class App extends Component {
 
   render() {
     return (
-      <>
-        <Section title="Phonebook">
+      <StyledApp>
+        <SectionPhonebook title="Phonebook">
           <FormPhonebook
             createPhoneNumber={this.createPhoneNumber}
             currentContacts={this.state.contacts}
           />
-        </Section>
+        </SectionPhonebook>
 
-        <Section title="Contacts">
+        <SectionContacts title="Contacts">
           <FilterContacs state={this.state} handleFilter={this.handleFilter} />
           <ContactList
             deleteContact={this.deleteContact}
             filter={this.filterContacts()}
           />
-        </Section>
-      </>
+        </SectionContacts>
+      </StyledApp>
     );
   }
 }
