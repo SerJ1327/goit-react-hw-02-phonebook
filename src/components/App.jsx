@@ -22,13 +22,11 @@ export class App extends Component {
   };
 
   filterContacts = () => {
-    return !this.state.filter
-      ? this.state.contacts
-      : this.state.contacts.filter(contact =>
-          contact.name
-            .toLocaleLowerCase()
-            .includes(this.state.filter.toLocaleLowerCase())
-        );
+    return this.state.contacts.filter(contact =>
+      contact.name
+        .toLocaleLowerCase()
+        .includes(this.state.filter.toLocaleLowerCase())
+    );
   };
 
   handleFilter = ({ target }) => {
